@@ -1,0 +1,50 @@
+@import url("./assets/css/normalize.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-family: "Nunito Sans", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		background-color: white;
+	}
+}
+
+@layer components {
+	.btn-primary {
+		@apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
+
+	.hover {
+		@apply cursor-pointer hover:bg-gray-100 hover:rounded-full;
+	}
+
+	.hover-shadow {
+		@apply hover:shadow;
+	}
+
+	.custom-rounded {
+		@apply flex flex-row rounded-full border px-2 py-1 gap-2 text-gray-500;
+	}
+
+	.search-item {
+		@apply cursor-pointer font-bold text-black border-r-2 px-4 border-gray-500;
+	}
+
+	.search_title_item_selected {
+		@apply border-b-2 border-gray-900 pb-2 cursor-pointer;
+	}
+
+	.search_title_item {
+		@apply cursor-pointer after:transition-[width] after:w-0 after:block after:h-[1px] after:duration-300 after:ease-in-out after:bg-gray-900;
+	}
+
+	.search_title_item:hover {
+		@apply after:w-full;
+	}
+
+	.custom-rounded-big {
+		@apply flex flex-row rounded-full border px-4 py-1 gap-2 text-gray-500;
+	}
+}
