@@ -32,17 +32,17 @@ const Profile = () => {
 					>
 						<Popover.Panel className="absolute left-0 z-10 mt-3 w-56 max-w-xs -translate-x-1/2 transform px-2 sm:px-0">
 							<div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-								<div class="overflow-hidden rounded-xl shadow-lg ring-1 ring-black ring-opacity-5">
-									<div class="relative grid gap-2 bg-white py-4 sm:gap-4">
-										<ul class="flex justify-start flex-col items-start gap-4 sm:px-6 mt-2">
-											<li class="font-bold text-base">Sign Up</li>
-											<li class="font-normal text-base">Login In</li>
+								<div className="overflow-hidden rounded-xl shadow-lg ring-1 ring-black ring-opacity-5">
+									<div className="relative grid gap-2 bg-white py-4 sm:gap-4">
+										<ul className="flex justify-start flex-col items-start gap-4 sm:px-6 mt-2">
+											<li className="font-bold text-base">Sign Up</li>
+											<li className="font-normal text-base">Login In</li>
 										</ul>
-										<div class="w-full h-[1px] bg-gray-200"></div>
-										<ul class="flex justify-start flex-col items-start gap-6 sm:px-6">
-											<li class="font-normal text-base">Airbnb you home</li>
-											<li class="font-normal text-base">Host an experience</li>
-											<li class="font-normal text-base">Help</li>
+										<div className="w-full h-[1px] bg-gray-200"></div>
+										<ul className="flex justify-start flex-col items-start gap-6 sm:px-6">
+											<li className="font-normal text-base">Airbnb you home</li>
+											<li className="font-normal text-base">Host an experience</li>
+											<li className="font-normal text-base">Help</li>
 										</ul>
 									</div>
 								</div>

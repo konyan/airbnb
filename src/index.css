@@ -29,7 +29,7 @@
 	}
 
 	.search-item {
-		@apply cursor-pointer font-bold text-black border-r-2 px-4 border-gray-500;
+		@apply cursor-pointer font-normal text-black border-r px-4 border-gray-300 text-sm;
 	}
 
 	.search_title_item_selected {
@@ -41,10 +41,14 @@
 	}
 
 	.search_title_item:hover {
-		@apply after:w-full;
+		@apply after:w-full text-gray-500;
 	}
 
 	.custom-rounded-big {
-		@apply flex flex-row rounded-full border px-4 py-1 gap-2 text-gray-500;
+		@apply rounded-full border text-gray-500 flex;
+	}
+
+	.tab_item {
+		@apply flex-1 justify-start items-start flex-col;
 	}
 }

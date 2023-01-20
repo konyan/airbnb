@@ -1,0 +1,18 @@
+input {
+	border: none;
+	outline: none;
+	color: black !important;
+	font-weight: 600 !important;
+	font-size: 0.8rem !important;
+	background-color: inherit;
+}
+
+input::-webkit-input-placeholder {
+	font-size: 0.8rem;
+	line-height: 4;
+	font-weight: 400;
+}
+
+input:hover {
+	background-color: inherit;
+}
