@@ -106,8 +106,37 @@ const SearchContainer = () => {
 					<Tab.Panels className="mt-2">
 						<Tab.Panel
 							key={1}
-							className={classNames("rounded-xl bg-white p-3")}
-						></Tab.Panel>
+							className={classNames("rounded-xl bg-white p-3 shadow-md w-3/5")}
+						>
+							<p className="font-bold text-sm px-4 mt-4">Search By Region</p>
+
+							<ul className="flex flex-row flex-wrap ml-4 mt-4 gap-2">
+								<li className="flex flex-col">
+									<div className="region_item"></div>
+									<p>I'm flexible</p>
+								</li>
+								<li className="flex flex-col">
+									<div className="region_item"></div>
+									<p>Europe</p>
+								</li>
+								<li className="flex flex-col">
+									<div className="region_item"></div>
+									<p>Japan</p>
+								</li>
+								<li className="flex flex-col">
+									<div className="region_item"></div>
+									<p>United States</p>
+								</li>
+								<li className="flex flex-col">
+									<div className="region_item"></div>
+									<p>South Korea</p>
+								</li>
+								<li className="flex flex-col">
+									<div className="region_item"></div>
+									<p>Australia</p>
+								</li>
+							</ul>
+						</Tab.Panel>
 					</Tab.Panels>
 				</Tab.Group>
 			</div>

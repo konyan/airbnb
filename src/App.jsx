@@ -7,7 +7,7 @@ import DefaultSearchBar from './component/DefaultSearchBar';
 import SearchContainer from './component/SearchContainer';
 
 function App() {
-  const [select,setSelect] = useState(true);
+  const [select,setSelect] = useState(false);
 
   const onSelectDefault = ()=>{
     setSelect(true);
