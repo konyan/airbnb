@@ -6,6 +6,9 @@ import { GlobeAltIcon } from '@heroicons/react/20/solid';
 import DefaultSearchBar from './component/DefaultSearchBar';
 import SearchContainer from './component/SearchContainer';
 
+import "swiper/css";
+import "swiper/css/navigation";
+
 function App() {
   const [select,setSelect] = useState(false);
 

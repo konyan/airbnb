@@ -1,4 +1,5 @@
 @import url("./assets/css/normalize.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,4 +52,80 @@
 	.region_item {
 		@apply w-32 h-32 bg-red-500 rounded-lg;
 	}
+
+	.month_box {
+		@apply border rounded-md flex-col flex items-center justify-center py-5 w-32;
+	}
+}
+
+.rmdp-day,
+.rmdp-week-day {
+	width: 44px;
+	height: 44px;
+}
+
+.rmdp-range {
+	background-color: rgba(0, 0, 0, 0.1);
+	box-shadow: none;
+	color: black;
+}
+
+.rmdp-range-hover.start,
+.rmdp-range.start,
+.rmdp-range-hover.end,
+.rmdp-range.end {
+	/* border-radius: 50%; */
+	background-color: black;
+	color: white;
+}
+
+.rmdp-day .rmdp-today {
+	background-color: transparent;
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	background: #fff;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.swiper-button-next {
+	@apply rounded-full -right-1 w-12 h-12 bg-white shadow-lg flex justify-center
+    items-center;
+}
+
+.swiper-button-prev {
+	@apply rounded-full w-12
+   h-12 bg-white shadow-lg flex justify-center items-center -left-1 z-10;
+}
+
+.swiper-button-next::after {
+	content: "\203A";
+	color: black;
+	font-size: 30px;
+	margin-bottom: 4px;
+}
+
+.swiper-button-prev::after {
+	content: "\2039";
+	color: black;
+	font-size: 30px;
+	margin-bottom: 4px;
 }
