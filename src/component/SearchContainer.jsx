@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Tab } from "@headlessui/react";
-import { CalendarIcon, MagnifyingGlassCircleIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon, MagnifyingGlassCircleIcon, MagnifyingGlassIcon, MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 import { Calendar } from 'react-multi-date-picker';
 import MonthBox from './monthBox';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation } from "swiper";
+import GuestTypeBox from './guestTypeBox';
 
 
 function classNames(...classes) {
@@ -59,6 +60,15 @@ const months = [
 const SearchContainer = () => {
   const [value, setValue] = useState();
 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+const onChangeTab = (index) =>{
+if(index === 1 || index === 2){
+setSelectedIndex(1);
+}else{
+  setSelectedIndex(index)
+}
+}
 
   return (
 		<div className="flex-row justify-center items-center">
@@ -74,7 +84,7 @@ const SearchContainer = () => {
 				</li>
 			</ul>
 			<div className="w-full px-2 sm:px-0">
-				<Tab.Group>
+				<Tab.Group selectedIndex={selectedIndex} onChange={onChangeTab}>
 					<Tab.List className="custom-rounded-big shadow mt-4 bg-gray-300">
 						<Tab
 							key="where"
@@ -155,7 +165,7 @@ const SearchContainer = () => {
 					</Tab.List>
 					<Tab.Panels className="mt-2">
 						<Tab.Panel
-							key={1}
+							tabIndex={0}
 							className={classNames("rounded-xl bg-white p-3 shadow-md w-3/5")}
 						>
 							<p className="font-bold text-sm px-4 mt-4">Search By Region</p>
@@ -188,7 +198,7 @@ const SearchContainer = () => {
 							</ul>
 						</Tab.Panel>
 						<Tab.Panel
-							key={1}
+							tabIndex={1}
 							className={classNames("rounded-xl bg-white p-3 shadow-md w-full")}
 						>
 							<Tab.Group>
@@ -283,13 +293,13 @@ const SearchContainer = () => {
 														modules={[Navigation]}
 														className="mySwiper  "
 													>
-														{months.map((m,i) => (
-                              <SwiperSlide
-																	key={i}
-																	className="flex flex-col items-center"
-																>
-																	<MonthBox  month={m.month} year={m.year} />
-																</SwiperSlide>
+														{months.map((m, i) => (
+															<SwiperSlide
+																key={i}
+																className="flex flex-col items-center"
+															>
+																<MonthBox month={m.month} year={m.year} />
+															</SwiperSlide>
 														))}
 													</Swiper>
 												</div>
@@ -298,6 +308,20 @@ const SearchContainer = () => {
 									</Tab.Panel>
 								</Tab.Panels>
 							</Tab.Group>
+						</Tab.Panel>
+						<Tab.Panel />
+						<Tab.Panel
+							tabIndex={3}
+							className={classNames(
+								"rounded-xl bg-white p-3 px-12 shadow-md w-3/5"
+							)}
+						>
+							<p className="font-bold text-sm  mt-4">Search By Region</p>
+
+							<GuestTypeBox title={"Adults"} caption="Ages 13 or Above" />
+							<GuestTypeBox title={"Child"} caption="Ages 2-12" />
+							<GuestTypeBox title={"Infants"} caption="Under 2" />
+							<GuestTypeBox title={"Pets"} caption="Bringing a service animal" />
 						</Tab.Panel>
 					</Tab.Panels>
 				</Tab.Group>
