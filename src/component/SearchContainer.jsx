@@ -313,7 +313,7 @@ setSelectedIndex(1);
 						<Tab.Panel
 							tabIndex={3}
 							className={classNames(
-								"rounded-xl bg-white p-3 px-12 shadow-md w-3/5"
+								"rounded-xl bg-white p-3 px-12 shadow-md w-3/5 ml-auto"
 							)}
 						>
 							<p className="font-bold text-sm  mt-4">Search By Region</p>
