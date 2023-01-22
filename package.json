@@ -6,7 +6,9 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
@@ -22,6 +24,7 @@
 		"@types/react-dom": "^18.0.9",
 		"@vitejs/plugin-react": "^3.0.0",
 		"autoprefixer": "^10.4.13",
+		"gh-pages": "^5.0.0",
 		"js-year-calendar": "^2.0.0",
 		"postcss": "^8.4.21",
 		"prop-types": "^15.8.1",
