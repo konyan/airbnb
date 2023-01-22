@@ -62,15 +62,36 @@ const SearchContainer = () => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const onChangeTab = (index) =>{
-    setSelectedIndex(index);
-  }
-
-
   const [travelDate, setTravelDate] = useState({
 		startDate: null,
 		endDate: null,
 	});
+
+  const [guest,setGuest] = useState({
+    adult: 0,
+    child: 0,
+    infant: 0,
+    pet:0,
+  })
+
+  const onChangeTab = (index) => {
+		setSelectedIndex(index);
+	};
+
+  const increaseGuest =( type)=>{
+    setGuest({
+      ...guest,
+      [type]: guest[type] + 1
+    })
+
+  }
+
+  const decreaseGuest =( type)=>{
+      setGuest({
+				...guest,
+				[type]: guest[type] - 1 === -1 ? 0 : guest[type] - 1,
+			});
+  }
 
   const onChangeDate = (date) =>{
     console.log("date changed",date)
@@ -182,33 +203,65 @@ const SearchContainer = () => {
 				<Tab.Panels className="mt-2">
 					<Tab.Panel
 						tabIndex={0}
-						className={classNames("rounded-xl bg-white p-3 shadow-md w-[480px]")}
+						className={classNames(
+							"rounded-xl bg-white p-3 shadow-md w-[480px]"
+						)}
 					>
 						<p className="font-bold text-sm px-4 mt-4">Search By Region</p>
 
 						<ul className="flex flex-row flex-wrap ml-4 mt-4 gap-2">
 							<li className="flex flex-col">
-								<div className="region_item"></div>
+								<div className="region_item">
+									<img
+										src="https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg"
+										alt="flex"
+									/>
+								</div>
 								<p>I'm flexible</p>
 							</li>
 							<li className="flex flex-col">
-								<div className="region_item"></div>
+								<div className="region_item">
+									<img
+										src="https://a0.muscache.com/im/pictures/7b5cf816-6c16-49f8-99e5-cbc4adfd97e2.jpg?im_w=320"
+										alt="flex"
+									/>
+								</div>
 								<p>Europe</p>
 							</li>
 							<li className="flex flex-col">
-								<div className="region_item"></div>
+								<div className="region_item">
+									<img
+										src="https://a0.muscache.com/im/pictures/26891a81-b9db-4a9c-8aab-63486b7e627c.jpg?im_w=320"
+										alt="flex"
+									/>
+								</div>
 								<p>Japan</p>
 							</li>
 							<li className="flex flex-col">
-								<div className="region_item"></div>
+								<div className="region_item">
+									<img
+										src="https://a0.muscache.com/im/pictures/4e762891-75a3-4fe1-b73a-cd7e673ba915.jpg?im_w=320"
+										alt="flex"
+									/>
+								</div>
 								<p>United States</p>
 							</li>
 							<li className="flex flex-col">
-								<div className="region_item"></div>
+								<div className="region_item">
+									<img
+										src="https://a0.muscache.com/im/pictures/c193e77c-0b2b-4f76-8101-b869348d8fc4.jpg?im_w=320"
+										alt="flex"
+									/>
+								</div>
 								<p>South Korea</p>
 							</li>
 							<li className="flex flex-col">
-								<div className="region_item"></div>
+								<div className="region_item">
+									<img
+										src="https://a0.muscache.com/im/pictures/42a1fb0f-214c-41ec-b9d7-135fbbdb8316.jpg?im_w=320"
+										alt="flex"
+									/>
+								</div>
 								<p>Australia</p>
 							</li>
 						</ul>
@@ -445,10 +498,10 @@ const SearchContainer = () => {
 					>
 						<p className="font-bold text-sm  mt-4">Search By Region</p>
 
-						<GuestTypeBox title={"Adults"} caption="Ages 13 or Above" />
-						<GuestTypeBox title={"Child"} caption="Ages 2-12" />
-						<GuestTypeBox title={"Infants"} caption="Under 2" />
-						<GuestTypeBox title={"Pets"} caption="Bringing a service animal" />
+						<GuestTypeBox  onInc={()=>increaseGuest("adult")} onDec={()=>decreaseGuest("adult")} count={guest.adult} title={"Adults"} caption="Ages 13 or Above"/>
+						<GuestTypeBox  onInc={()=>increaseGuest("child")} onDec={()=>decreaseGuest("child")} count={guest.child} title={"Child"} caption="Ages 2-12" />
+						<GuestTypeBox  onInc={()=>increaseGuest("infant")} onDec={()=>decreaseGuest("infant")} count={guest.infant} title={"Infants"} caption="Under 2" />
+						<GuestTypeBox  onInc={()=>increaseGuest("pet")} onDec={()=>decreaseGuest("pet")} count={guest.pet} title={"Pets"} caption="Bringing a service animal" />
 					</Tab.Panel>
 				</Tab.Panels>
 			</Tab.Group>
