@@ -1,25 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Profile from './component/Profile';
-import { GlobeAltIcon } from '@heroicons/react/20/solid';
-import DefaultSearchBar from './component/DefaultSearchBar';
-import SearchContainer from './component/SearchContainer';
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import Profile from "./component/Profile";
+import { GlobeAltIcon } from "@heroicons/react/20/solid";
+import DefaultSearchBar from "./component/DefaultSearchBar";
+import SearchContainer from "./component/SearchContainer";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import MobileSearchBar from "./component/MobileSearchBar";
+import SearchFilter from "./component/SearchFIlter";
 
 function App() {
-  const [select,setSelect] = useState(false);
+	const [select, setSelect] = useState(false);
+	const [open, setOpen] = useState(false);
 
+	const onSelectDefault = () => {
+		setSelect(true);
+	};
 
-  const onSelectDefault = ()=>{
-    setSelect(true);
-  }
-
-  return (
+	return (
 		<header id="header" className="block h-40 w-full relative">
-			<section className="border-y-2 h-full border-gray-100">
+			<div className='lg:hidden'>
+				<MobileSearchBar
+					onSelect={() => {
+						setOpen(!open);
+					}}
+				/>
+				<SearchFilter open={open} onClose={setOpen} />
+			</div>
+			<section className="hidden lg:flex border-y-2 h-full border-gray-100">
 				<div className="flex justify-between flex-row items-start pt-8 mx-auto px-20 w-full h-full">
 					{/* icon */}
 					<div className="flex-1 basis-36">
@@ -38,11 +48,17 @@ function App() {
 					</div>
 					{/* search bar */}
 					<div className="flex-initial">
-						{!select ? <DefaultSearchBar onSelect={onSelectDefault}/> : <SearchContainer/>}
+						{!select ? (
+							<DefaultSearchBar onSelect={onSelectDefault} />
+						) : (
+							<SearchContainer />
+						)}
 					</div>
 					{/* profile */}
 					<div className="flex flex-row gap-2 justify-end items-center relative flex-1 basis-36">
-						<p className="py-2 px-4 hover text-sm font-normal">Airbnb your home</p>
+						<p className="py-2 px-4 hover text-sm font-normal">
+							Airbnb your home
+						</p>
 						<a href="#" className="p-2 hover">
 							<GlobeAltIcon className="w-5 h-5" />
 						</a>
@@ -54,4 +70,4 @@ function App() {
 	);
 }
 
-export default App
+export default App;

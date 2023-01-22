@@ -19,7 +19,7 @@ const GuestTypeBox = ({ title, caption,count ,onInc,onDec }) => {
 					>
 						<MinusIcon className="lg:w-5 lg:h-5 w-3 h-3 text-black my-1" />
 					</button>
-					<p className="ml-4 mr-4 text-center text-[27px] w-[30px] font-medium">
+					<p className="ml-4 mr-4 text-black text-center text-[27px] w-[30px] font-medium">
 						{count}
 					</p>
 					<button
