@@ -42,11 +42,11 @@
 	}
 
 	.custom-rounded-big {
-		@apply rounded-full border text-gray-500 flex;
+		@apply grid grid-flow-col text-center text-gray-500 rounded-full bg-gray-300 active:bg-transparent;
 	}
 
 	.tab_item {
-		@apply flex-1 justify-start items-start flex-col;
+		@apply flex justify-start flex-col;
 	}
 
 	.region_item {

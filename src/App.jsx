@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 function App() {
   const [select,setSelect] = useState(false);
 
+
   const onSelectDefault = ()=>{
     setSelect(true);
   }
