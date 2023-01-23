@@ -198,3 +198,7 @@
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
+
+.rmdp-border {
+	border: none;
+}
