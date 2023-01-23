@@ -311,6 +311,7 @@ const SearchContainer = () => {
 										disableYearPicker
 										value={value}
 										onChange={onChangeDate}
+                    borderColor="transparent"
 										mapDays={({
 											date,
 											today,
