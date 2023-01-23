@@ -56,7 +56,7 @@ function App() {
 					</div>
 					{/* profile */}
 					<div className="flex flex-row gap-2 justify-end items-center relative flex-1 basis-36">
-						<p className="py-2 px-4 hover text-sm font-normal">
+						<p className="p-2 hover text-sm font-normal">
 							Airbnb your home
 						</p>
 						<a href="#" className="p-2 hover">
