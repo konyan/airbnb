@@ -72,8 +72,8 @@
 
 .rmdp-day,
 .rmdp-week-day {
-	width: 44px;
-	height: 44px;
+	width: 44px !important;
+	height: 44px !important;
 }
 
 .rmdp-range {
